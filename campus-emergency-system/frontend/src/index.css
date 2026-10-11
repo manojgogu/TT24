@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-primary: #1e293b;
+    --color-danger: #dc2626;
+  }
+
+  body {
+    @apply bg-slate-50 text-slate-900 min-h-screen antialiased selection:bg-red-500 selection:text-white;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+}
+
+@layer utilities {
+  .glass-card {
+    @apply bg-white/90 backdrop-blur-md border border-slate-200/80 shadow-sm;
+  }
+
+  .glass-card-dark {
+    @apply bg-slate-900/90 backdrop-blur-md border border-slate-800 text-white shadow-xl;
+  }
+
+  .sos-glow {
+    box-shadow: 0 0 25px rgba(220, 38, 38, 0.5), inset 0 0 15px rgba(255, 255, 255, 0.3);
+  }
+
+  .sos-pulse-ring {
+    animation: sosPulse 1.8s cubic-bezier(0.24, 0, 0.38, 1) infinite;
+  }
+}
+
+@keyframes sosPulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 22px rgba(220, 38, 38, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(220, 38, 38, 0);
+  }
+}
+
+/* Custom Sleek Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
